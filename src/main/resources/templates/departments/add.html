@@ -1,0 +1,25 @@
+<!--
+  ~ Copyright (c) 2020.
+  ~ By Yashodha Ranawaka on 12/8/20, 11:36 AM.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>Add Department</h1>
+<form action="/departments/add" method="post" th:object="${department}">
+    <select th:field="*{departmentName}">
+        <option th:each="departmentNameType : ${departmentNameTypes}"
+                th:text="${departmentNameType.name}"
+                th:value="${departmentNameType}"></option>
+    </select>
+    <p class="error" th:errors="${department.departmentName}"></p>
+    <input type="submit" value="Add Department"/>
+
+</form>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>

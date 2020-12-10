@@ -1,0 +1,40 @@
+<!--
+  ~ Copyright (c) 2020. 
+  ~ By Yashodha Ranawaka on 12/10/20, 6:03 AM.
+  -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org" lang="en">
+<head th:fragment="html_head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>[[${title}]]</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    &lt;!&ndash; jQuery library &ndash;&gt;
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    &lt;!&ndash; Latest compiled JavaScript &ndash;&gt;
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="html_navbar">
+    <a class="navbar-brand" th:href="@{/employees}">All Employees</a>
+    <a class="navbar-brand" th:href="@{/employees/add}">Add Employee</a>
+    <a class="navbar-brand" th:href="@{/employees/byName}">Search by Name</a>
+    <a class="navbar-brand" th:href="@{/employees/byDepartment}">Search by Department</a>
+    <a class="navbar-brand" th:href="@{/departments}">All Departments</a>
+    <a class="navbar-brand" th:href="@{/departments/add}">Add Department</a>
+</nav>
+<div th:fragment="html_foot" class="text-center">
+    <p>Simple Spring MVC CRUD - Copyright &copy; Yashodha</p>
+</div>
+</body>
+</html>

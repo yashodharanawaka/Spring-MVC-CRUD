@@ -1,0 +1,76 @@
+<!--
+  ~ Copyright (c) 2020. 
+  ~ By Yashodha Ranawaka on 12/9/20, 11:11 AM.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>Edit Employee</h1>
+<form  action=""
+       th:object="${employee}" method="post">
+    <div class="form-group">
+        <label>First Name:
+            <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+            <p class="error" th:errors="${employee.firstName}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Last Name:
+            <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+            <p class="error" th:errors="${employee.lastName}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>E-mail:
+            <input type="text" th:field="*{emailID}" id="emailID" placeholder="E-mail">
+            <p class="error" th:errors="${employee.emailID}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>NIC:
+            <input type="text" th:field="*{nic}" id="nic" placeholder="NIC">
+            <p class="error" th:errors="${employee.nic}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Department:
+            <select th:field="*{department}">
+                <option th:each="department : ${departments}"
+                        th:text="${department.departmentName}"
+                        th:value="${department.departmentId}"></option>
+            </select>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Gender:
+            <input type="text" th:field="*{gender}" id="gender" placeholder="Gender">
+            <p class="error" th:errors="${employee.gender}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Date of Birth:
+            <input type="date" th:field="*{dob}" id="dob">
+            <p class="error" th:errors="${employee.dob}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Designation:
+            <input type="text" th:field="*{designation}" id="designation">
+            <p class="error" th:errors="${employee.designation}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Joined Date:
+            <input type="date" th:field="*{joinedDate}" id="joinedDate">
+            <p class="error" th:errors="${employee.joinedDate}"></p>
+        </label>
+    </div>
+    <input type="submit" value="Update Employee Info">
+</form>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>

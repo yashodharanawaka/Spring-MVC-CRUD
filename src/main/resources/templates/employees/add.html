@@ -1,0 +1,75 @@
+<!--
+  ~ Copyright (c) 2020.
+  ~ By Yashodha Ranawaka on 12/8/20, 6:35 PM.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>Add Employee</h1>
+<form method="post" action="/employees/add" th:object="${employee}">
+   <div class="form-group">
+       <label>Department:
+           <select th:field="${employee.department}">
+               <option th:each="department : ${departments}"
+                       th:text="${department.departmentName}"
+                       th:value="${department.departmentId}"></option>
+           </select>
+       </label>
+   </div>
+    <div class="form-group">
+        <label>First Name:
+            <input th:field="${employee.firstName}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.firstName}"></p>
+    </div>
+    <div class="form-group">
+        <label>Last Name:
+            <input th:field="${employee.lastName}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.lastName}"></p>
+    </div>
+    <div class="form-group">
+        <label>NIC:
+            <input th:field="${employee.nic}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.nic}"></p>
+    </div>
+    <div class="form-group">
+        <label>Email ID:
+            <input th:field="${employee.emailID}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.emailID}"></p>
+    </div>
+    <div class="form-group">
+        <label>Gender:
+            <input th:field="${employee.gender}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.gender}"></p>
+    </div>
+    <div class="form-group">
+        <label>Date of Birth:
+            <input th:field="${employee.dob}" type="date" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.dob}"></p>
+    </div>
+    <div class="form-group">
+        <label>Designation:
+            <input th:field="${employee.designation}" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.designation}"></p>
+    </div>
+    <div class="form-group">
+        <label>Joined Date:
+            <input th:field="${employee.joinedDate}" type="date" class="form-control">
+        </label>
+        <p class="error" th:errors="${employee.joinedDate}"></p>
+    </div>
+    <input type="submit" value="Add Employee"/>
+</form>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>

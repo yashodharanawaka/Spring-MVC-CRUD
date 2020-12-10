@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) 2020.
+  ~ By Yashodha Ranawaka on 12/9/20, 5:34 PM.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>Search by Name</h1>
+<form method="get" action="/employees/searchByName" >
+    <div class="form-group">
+        <label>Type the name here:
+            <input name="searchWord" type="text" class="form-control">
+        </label>
+    </div>
+    <input type="submit" value="Search"/>
+</form>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>

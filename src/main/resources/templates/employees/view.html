@@ -1,0 +1,48 @@
+<!--
+  ~ Copyright (c) 2020. 
+  ~ By Yashodha Ranawaka on 12/9/20, 5:32 PM.
+  -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>Search Result</h1>
+<p th:unless="${results} and ${results.size()}">No employees!</p>
+<div th:switch="${results}">
+    <div th:case="*">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">NIC</th>
+                <th scope="col">Department</th>
+                <th scope="col">E-mail ID</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Joined on</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr scope="row" th:each="results : ${results}">
+                <td th:text="*{results.firstName}"></td>
+                <td th:text="*{results.lastName}"></td>
+                <td th:text="*{results.nic}"></td>
+                <td th:text="*{results.department.departmentName}"></td>
+                <td th:text="*{results.emailID}"></td>
+                <td th:text="*{results.gender}"></td>
+                <td th:text="*{results.dob}"></td>
+                <td th:text="*{results.designation}"></td>
+                <td th:text="*{results.joinedDate}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>

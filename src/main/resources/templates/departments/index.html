@@ -1,0 +1,28 @@
+<!--
+  ~ Copyright (c) 2020.
+  ~ By Yashodha Ranawaka on 12/8/20, 11:36 AM.
+  -->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments :: html_head">
+</head>
+<body class="container">
+<nav th:replace="fragments :: html_navbar"></nav>
+<h1>All Departments</h1>
+<p th:unless="${departments} and ${departments.size()}">No Departments!</p>
+<div th:switch="${departments}" class="container">
+    <div th:case="*">
+        <ul>
+            <li th:each="department : ${departments}">
+                <td th:text="*{department.departmentName}"></td>
+                <!--                <td><a th:href="@{/edit/{id}(id=${department.id})}">Edit</a></td>-->
+                <!--                <td><a th:href="@{/delete/{id}(id=${department.id})}">Delete</a></td>-->
+            </li>
+        </ul>
+    </div>
+</div>
+<div th:replace="fragments :: html_foot"></div>
+</body>
+</html>
